@@ -45,15 +45,9 @@
             //написать нам
             @include contacts_font( HelveticaNeueCyr,normal,normal,14px,24px,#A68E52);
             align-self: flex-end;
+            border-bottom:1px solid #A68E52 ;
         }
-        div:nth-child(3){
-            //line under 'написать нам'
-            border: 1px solid #A68E52;
-            align-self: flex-start;
-            width: 85px;
-            justify-items: end;
-            margin-left: 50px;
-        }
+        
     }
     &>div:nth-child(4){
         //address, open in navigator
@@ -68,11 +62,14 @@
             @include contacts_font( HelveticaNeueCyr,normal,normal,14px,24px, #757575);
         }
         &>div:nth-child(2){
-            @include contacts_font(Cormorant,normal,500,30px,68px, #212224);
+            @include contacts_font(Cormorant,normal,500,30px,normal, #212224);
         }
         &>div:nth-child(3){
+            //открыть в навигаторе
             margin-top:10px;
             @include contacts_font( HelveticaNeueCyr,normal,normal,14px,24px, #A68E52);
+           
+            
         }
         &>div:last-child{
             border: 1px solid #A68E52;

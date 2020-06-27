@@ -925,13 +925,8 @@ section {
       font-size: 14px;
       line-height: 24px;
       color: #A68E52;
-      align-self: flex-end; }
-    .contacts > div:nth-child(3) div:nth-child(3) {
-      border: 1px solid #A68E52;
-      align-self: flex-start;
-      width: 85px;
-      justify-items: end;
-      margin-left: 50px; }
+      align-self: flex-end;
+      border-bottom: 1px solid #A68E52; }
   .contacts > div:nth-child(4) {
     grid-row: 3;
     grid-column: 4/7;
@@ -951,7 +946,7 @@ section {
       font-style: normal;
       font-weight: 500;
       font-size: 30px;
-      line-height: 68px;
+      line-height: normal;
       color: #212224; }
     .contacts > div:nth-child(4) > div:nth-child(3) {
       margin-top: 10px;
