@@ -17,12 +17,12 @@ header .logo.img, .logo, .logo_slide2 {
   margin-top: 22px; }
 
 .slide1 {
-  background: linear-gradient(270deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0) 100%), url(/images/header-bg_1.jpg);
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0) 100%), url(images/header-bg_1.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
 .scroll {
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0) 100%), url(/images/header-bg_2.jpg);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0) 100%), url(images/header-bg_2.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 
@@ -43,7 +43,7 @@ header {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-image: url(/images/Vector.png);
+  background-image: url(images/Vector.png);
   background-repeat: no-repeat;
   background-position: center;
   opacity: 0.4;
@@ -576,7 +576,7 @@ section {
   line-height: 26px; }
 
 .apartments_doc_page {
-  background: linear-gradient(180deg, rgba(22, 27, 33, 0) 81.93%, #161B21 99.94%), url(/images/sales-bg_1.jpg);
+  background: linear-gradient(180deg, rgba(22, 27, 33, 0) 81.93%, #161B21 99.94%), url(images/sales-bg_1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 1000px; }
@@ -584,7 +584,7 @@ section {
     width: auto;
     height: 1000px; }
   .apartments_doc_page .documents {
-    background-image: url(/images/Rectangle_3185.jpg);
+    background-image: url(images/Rectangle_3185.jpg);
     height: 550px;
     width: auto; }
 
@@ -1121,9 +1121,9 @@ section {
 
 @font-face {
   font-family: 'HelveticaNeueCyr';
-  src: url(/fonts/9177.otf);
+  src: url(fonts/9177.otf);
   font-family: 'Cormorant';
-  src: url(/fonts/Cormorant-Regular.ttf); }
+  src: url(fonts/Cormorant-Regular.ttf); }
 
 body {
   width: 1200px; }
