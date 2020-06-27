@@ -1,0 +1,356 @@
+body{
+    margin: 0;
+}
+%body_style {
+    display: grid;
+    grid-template-rows: 239px 1fr;
+    margin: 0;
+    width: 100%;
+    transition: all 1s;
+    height: 750px;
+}
+%img_logo{
+    display: block;
+    width: 59px;
+    height: 69px;
+    margin-left: 45px;
+    margin-top: 22px;
+}
+@mixin font($font-family,$font-size,$font-style,$font-weight){
+    font-family: $font-family;
+    font-size:$font-size;
+    font-style: $font-style;
+    font-weight:$font-weight;
+}
+
+
+.slide1 {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0) 100%), url(/images/header-bg_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @extend %body_style;
+}
+
+.scroll {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.9) 0.01%, rgba(0, 0, 0, 0) 100%), url(/images/header-bg_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    @extend %body_style;
+}
+
+header {
+    display: flex;
+    flex-flow: row;
+
+   .logo.img {
+        @extend %img_logo;
+    }
+}
+.header_phone {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    left: 225px;
+}
+.header_phone {
+    div:first-child {
+        grid-row: 2/4;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-image: url(/images/Vector.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.4;
+        border: 1px solid #757575;
+        box-sizing: border-box;
+        justify-self: right;
+        margin-right: 12px;
+    }
+    div:nth-child(2) {
+        @include font(HelveticaNeueCyr,14px,normal,normal);
+        grid-column: 2;
+        grid-row: 2/3;
+        line-height: 26px;
+        color: #A68E52;
+        align-self: flex-end;
+    }
+    div:nth-child(3) {
+        @include font(HelveticaNeueCyr,10px,normal,normal);
+        grid-row: 3;
+        grid-column: 2;
+        line-height: 26px;
+        color: #DDDDDD;
+        border-bottom: 1px solid #A68E52;
+        justify-self: flex-start;
+        align-self: flex-start;
+
+    }
+
+    div:nth-child(4) {
+        @include font(HelveticaNeueCyr,10px,normal,normal);
+        margin-left: 49px;
+        align-self: center;
+        grid-row: 2/4;
+        grid-column: 3;
+        line-height: 30px;
+        letter-spacing: 0.05em;
+        color: #DDDDDD;
+        opacity: 0.4;
+        border: 1px solid #757575;
+        border-radius: 50%;
+        height: 30px;
+        width: 30px;
+        text-align: center;
+    }
+}
+.slide2{
+    //show logo,section text clubHouse and section main text
+    display:block;
+}
+.logo{
+    display: none;
+}
+.logo{
+@extend %img_logo;
+}
+.showlogo{
+    display: block;
+}
+
+
+.logo_slide2 {
+    //logo top right corner slide2
+    @extend %img_logo;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    grid-template-rows: 30px 1fr (2, auto);
+
+    .slider {
+        grid-row: 1/3;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 25px;
+        height: 125px;
+        margin-left: 41px;
+
+    }
+
+    .slider {
+        
+        div:first-child {
+//number on top
+@include font(HelveticaNeueCyr,10px,normal,normal);
+            width: 14px;
+            height: 24px;
+            line-height: 24px;
+            color: #A68E52;
+            transform: rotate(-90deg);
+        }
+
+        div:last-child {
+//number on bottom
+@include font(HelveticaNeueCyr,12px,normal,normal);
+            width: 12px;
+            height: 24px;
+            line-height: 24px;
+            color: #757575;
+            transform: rotate(-90deg);
+        }
+    }
+
+    .vertical_line {
+        //line between number on top and number on bottom
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-content: center;
+        height: 77px;
+        position: relative;
+
+        &>div:first-child {
+            //moving line
+            width: 25px;
+            height: 0px;
+            border: 1px solid #DDDDDD;
+            transform: rotate(90deg);
+            align-self: center;
+            position: absolute;
+            top:12px;
+        }
+
+        &>div:last-child {
+            //line
+            
+            width: 78px;
+            height: 0px;
+            opacity: 0.4;
+            border: 1px solid #DDDDDD;
+            transform: rotate(90deg);
+            
+        }
+    }
+
+    &>.divClubresidence {
+        //section text - club residence or club house
+        @include font(HelveticaNeueCyr,14px,normal,normal);
+        display: none;
+        grid-column: 2;
+        grid-row: 1;
+        line-height: 24px;
+        color: #A68E52;
+        &.active{
+            display:block;
+        }
+    }
+
+    &>.maintext {
+        //section main text
+        @include font(Cormorant,68px,normal,normal);
+        display: none;
+        grid-column: 2;
+        grid-row: 2;
+        font-weight: 500;
+        width: 600px;
+        line-height: 68px;
+        color: #FDFBFB;
+        &.active{
+           display: block;
+        }
+    }
+
+    input[type='button'] {
+        @include font(HelveticaNeueCyr,10px,normal,normal);
+        grid-column: 2;
+        grid-row: 3;
+        width: 182px;
+        height: 38px;
+        background: #A68E52;
+        border-radius: 3px;
+        line-height: 26px;
+        align-self: flex-end;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: #FDFBFB;
+    }
+}
+
+.dots_slider {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 125px;
+    grid-column: 2;
+    grid-row: 4;
+
+    & .dots.checked {
+        width: 8px;
+        height: 8px;
+        background: #DDDDDD;
+        border-radius: 50%;
+        opacity: 1;
+    }
+
+    .dots {
+        margin-left: 25px;
+        width: 8px;
+        height: 8px;
+        background: #757575;
+        opacity: 0.3;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    %img_arrow {
+        height: 6.83px;
+        width: 50.35px;
+        cursor: pointer;
+    }
+
+    .slideForward {
+        //arrow back
+        @extend %img_arrow;
+        margin-left: 37px;
+    }
+
+    .slideBack {
+        //arrow forward
+        @extend %img_arrow;
+        margin-left: 24.65px;
+
+
+    }
+}
+
+.slide1_footer {
+    margin-left: 110px;
+    margin-top: 76px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-bottom: 23px;
+
+    img:first-child {
+        //footer img location
+        width: fit-content;
+        height: fit-content;
+        align-self: center;
+    }
+
+    .slide1_footer_address {
+        //footer address
+        display: none;
+        @include font(HelveticaNeueCyr,10px,normal,normal);
+        margin-left: 10.43px;
+        align-self: center;
+        height: 26px;
+        line-height: 26px;
+        letter-spacing: 0.05em;
+        color: #DDDDDD;
+        opacity: 0.7;
+        &.active{
+            display: block;
+        }
+    }
+
+    div:nth-child(4) {
+        //footer img M
+        @include font(HelveticaNeueCyr,10px,normal,normal);
+        margin-left: 86.64px;
+        font-weight: 550;
+        line-height: 20px;
+        text-align: center;
+        /* identical to box height, or 260% */
+        border-radius: 50%;
+        border: 0.8px solid #A68E52;
+        box-sizing: border-box;
+        letter-spacing: 0.05em;
+        width: 20px;
+        height: 20px;
+        color: #A68E52;
+    }
+
+    div:nth-child(5) {
+        //footer metro station
+        @include font(HelveticaNeueCyr,10px,normal,normal);
+        margin-left: 13px;
+        line-height: 26px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #DDDDDD;
+        opacity: 0.7;
+    }
+
+    img:last-child {
+        //logo on bottom right side
+        
+        margin-left: 650px;
+       
+    }
+}

@@ -1,0 +1,248 @@
+@mixin font_gallery($font,$size,$style,$weight){
+    font-family:$font;
+    font-size:$size;
+    font-style:$style;
+    font-weight:$weight;
+}
+@mixin nav_pos($row,$column){
+    grid-row:$row;
+    grid-column:$column;
+}
+
+.gallery{
+    
+    display:grid;
+    grid-template-columns: 160px repeat(6,auto);
+    grid-template-rows: repeat(3,auto);
+    width: 100%;
+height: 750px;
+}
+.gallery_navigation{
+    //navigation on the left side
+    grid-column: 1;
+    grid-row: 1;
+    margin-top:127px;
+    display: grid;
+    grid:repeat(7,60px)/50px 1fr;
+    z-index: 100;
+   
+    &>div{
+@include font_gallery( HelveticaNeueCyr,10px ,normal ,normal );
+        
+margin-left: 30px;
+line-height: 3px;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+color: #757575;
+    }
+}
+.gallery_main_photo{
+   z-index: 100;
+    grid-column: 2/8;
+    grid-row: 1/3;
+width: 100%;
+   
+    
+}
+.gallery>img:nth-child(3) {
+
+z-index: 1;
+grid-row: 1/3;
+grid-column: 1/3;
+align-self: end;
+justify-self: right;
+
+}
+.gallery>.gallery_navigation>div.active, 
+.apartments.gallery_navigation>div.active, 
+.documents>.gallery_navigation>div.active,
+.contacts>.gallery_navigation>div.active{
+    //left nav bar list text visible
+    visibility: visible;
+}
+
+.gallery_navigation{
+    
+.nav_dots.gallery_dot_outerellipse.active, .nav_dots.gallery_dot_outerellipse:hover {
+    
+justify-self: unset;
+position: relative;
+width: 30px;
+height: 30px;
+background: #DDDDDD;
+opacity: 0.3;
+border: 0.5px solid #A68E52;
+box-sizing: border-box;
+border-radius: 50%;
+.gallery_dot_innerellipse{
+    position: absolute;
+width: 20px;
+height: 20px;
+background: #DDDDDD;
+opacity: 0.5;
+border: 0.5px solid #A68E52;
+box-sizing: border-box;
+border-radius: 50%;
+top: 4px;
+right: 4px;
+.gallery-dot{
+    position: absolute;
+width: 6px;
+height: 6px;
+top:6px;
+right: 6px;
+background: #A68E52;
+box-shadow: 0px 0px 10px rgba(166, 142, 82, 0.7);
+border-radius: 50%;
+
+}
+}
+}
+
+@each $n in 1,4,6,8{
+    div:nth-child(#{$n}){
+        background: #A68E52;
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+    }
+}
+@each $n in 3,5,7,9{
+    .nav_dots:hover+div:nth-child(#{$n}){
+        visibility: visible;
+    }
+}
+@for $i from 1 through 11{
+    div:nth-child(#{$i}){
+    align-self: center;
+    cursor: pointer;   
+    }
+}
+
+div:nth-child(1){
+    @include nav_pos(1,1);
+    justify-self: right;
+}
+div:nth-child(2){
+    @include nav_pos(2,1);
+    justify-self: right;
+    
+}
+div:nth-child(3){
+    @include nav_pos(2,2);
+    visibility:hidden;
+}
+div:nth-child(4){
+    @include nav_pos(3,1);
+    justify-self: right;
+    
+}
+div:nth-child(5){
+    @include nav_pos(3,2);
+    visibility: hidden;
+}
+
+div:nth-child(6){
+    @include nav_pos(4,1);
+    justify-self: right;
+}
+div:nth-child(7){
+    @include nav_pos(4,2);
+    visibility: hidden;
+}
+div:nth-child(8){
+    @include nav_pos(5,1);
+    justify-self: right;
+}
+div:nth-child(9){
+    @include nav_pos(5,2);
+    visibility: hidden;
+    
+}
+img:nth-child(10){
+    @include nav_pos(6,1);
+    justify-self: right;
+    
+}
+img:nth-child(11){
+    @include nav_pos(7,1);
+    
+    justify-self: right;
+}
+}
+.gallery_navigation_form{
+    @include font_gallery(HelveticaNeueCyr,10px ,normal ,bold );
+    z-index: 100;
+    align-self: center;
+    grid-column: 1/2;
+    grid-row: 2/7;
+    align-self: flex-end;
+    display: grid;
+    grid-template-columns: 318px 202px 1fr;
+    grid-template-rows: 1fr 1fr;
+    width:520px;
+    height: 103px;
+    background: #FDFBFB;
+box-shadow: 0px 5px 60px rgba(55, 55, 55, 0.2);
+.nameClubhouse{
+    @include font_gallery(HelveticaNeueCyr,10px ,normal ,bold );
+    text-align:center;
+    cursor: pointer;
+    line-height: 50px;
+    line-height: 50px;
+    letter-spacing: 0.05em;
+    color: #212224;
+   background:  #F1F1F1;
+   &.residence{
+    @include nav_pos(1,2);
+   }
+}
+.nameClubhouse{
+    @include nav_pos(1,1);
+}
+
+&>.active{
+        background: #FDFBFB;
+        color: #A68E52;
+    }
+}
+.gallery_navigation_form_dots{
+    grid-column:1/3;
+    grid-row: 2;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-self: center;
+    
+    .gallery_nav_dots{
+        cursor: pointer;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #DDDDDD;
+    }
+    .active{
+        background: #A68E52;
+    }
+    
+}
+.gallery_navigation_back,.gallery_navigation_forward{
+    cursor: pointer;
+}
+.gallery_images{
+   
+    z-index: 100;
+    grid-column:3;
+    grid-row: 1/3;
+    display: flex;
+    flex-flow: row nowrap;
+    
+    .active{
+        height: 104px;
+    }
+    & img{
+        margin-left:10px;
+        height: 74px;
+        align-self: flex-end;
+    }
+}
