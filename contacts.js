@@ -8,13 +8,13 @@
         let mapPos=document.getElementById('map');
     let arr=[
         {address:salesOffice,
-            img:'/images/sales_point.png'
+            img:'css/images/sales_point.png'
             },
         {address:clubResidence,
-            img:'/images/residence_point.png'
+            img:'css/images/residence_point.png'
        },
         {address:clubHouse,
-            img:'/images/club_point.png'
+            img:'css/images/club_point.png'
         }
         ];
         function initMap(){
